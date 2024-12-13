@@ -1,0 +1,77 @@
+body {
+    background-color: #f8f9fa;
+    background-image: url("/image/maroon.jpg");
+    background-size: 100% 100%;
+  }
+
+  .nav-item {
+    font-size: 20px;
+    padding-right: 40px;
+    padding-top: 0px;
+  }
+  
+  .nav-item {
+    padding-top: 10px;
+  }
+  
+  .navbar {
+    background-color: rgb(66, 22, 22);
+    color: white;
+  }
+  
+  .container-fluid p {
+    padding-top: 10px;
+  }
+  
+  .nav-link {
+    padding-bottom: 20px;
+    color: white;
+  }
+  
+  .card {
+    margin-left: 100px;
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color: rgb(66, 22, 22);
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(171, 63, 63);
+    border-color: #0056b3;
+  }
+  
+  .text-center a {
+    color: #007bff;
+  }
+  
+  .text-center a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer {
+    top: 50px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: #343a40;
+    color: white;
+    position: relative;
+    width: 100%;
+  }
+  
