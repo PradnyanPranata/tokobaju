@@ -39,19 +39,19 @@
             <!-- Product Image -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="/image/blazer.png" class="card-img-top" alt="Product Image" />
+                    <img src="/image/vest.png" class="card-img-top" alt="Product Image" />
                 </div>
             </div>
 
             <!-- Product Description and Purchase Form -->
             <div class="col-md-6">
                 <div class="product-description-box p-4 shadow">
-                    <h2 class="product-title">Blazer</h2>
-                    <p>Tampil percaya diri dan profesional dengan blazer elegan ini. Didesain untuk memberikan kesan yang rapi dan stylish.</p>
-                    <h3 class="product-price">Harga: <b>Rp500.000</b></h3>
+                    <h2 class="product-title">Vest</h2>
+                    <p>Tambahkan sentuhan modern pada koleksi pakaian Anda dengan vest wanita ini. Dibuat dari bahan yang ringan namun tetap stylish</p>
+                    <h3 class="product-price">Harga: <b>Rp250.000</b></h3>
 
                     <!-- Form Pembelian -->
-                    <form action="{{ route('beli.produk', ['id' => 3]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('beli.produk', ['id' => 9]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <!-- Pilih Ukuran -->
                         <div class="mb-3">

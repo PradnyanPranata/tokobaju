@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS Framework -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="uts.js"></script>
-    <link rel="stylesheet" href="/css/editbarang1.css" />
+    <link rel="stylesheet" href="/css/editbarang3.css" />
 </head>
 <body>
     <!-- Header -->
@@ -49,7 +49,7 @@
         <!-- Product Card 1 -->
         <div class="col-md-4">
             <div class="card">
-                <img src="/image/hoodie.png" class="card-img-top" alt="Product 1" />
+                <img src="/image/vest.png" class="card-img-top" alt="Product 1" />
             </div>
         </div>
 

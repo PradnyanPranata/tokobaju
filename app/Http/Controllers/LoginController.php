@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -14,31 +17,38 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // Validasi input
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        // Coba login menggunakan kredensial
-        if (Auth::attempt($credentials)) {
-            \Log::info('Login berhasil untuk user: ' . Auth::user()->email);
-            $request->session()->regenerate();
-
-            // Redirect sesuai dengan peran pengguna setelah login
-            if (Auth::User()->is_admin == 1) {
-                return redirect()->route('admin');
-            } else {
-                return redirect()->route('uts');
+        try {
+            $credentials = $request->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ]);
+    
+            $user = User::where('email', $credentials['email'])->first();
+    
+            if ($user && Hash::check($credentials['password'], $user->password)) {
+                Auth::login($user);
+                $request->session()->regenerate();
+    
+                if ($user->is_admin == 1) {
+                    return redirect()->intended('tampilanadmin');
+                } else {
+                    return redirect()->intended('uts');
+                }
             }
+    
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ])->onlyInput('email');
+    
+        } catch (\Exception $e) {
+            Log::error('Login error: ' . $e->getMessage());
+    
+            return back()->withErrors([
+                'error' => 'An unexpected error occurred. Please try again later.',
+            ]);
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->withInput();
-        \Log::warning('Login gagal untuk email: ' . $credentials['email']);
-        
     }
+
 
     public function logout(Request $request)
     {

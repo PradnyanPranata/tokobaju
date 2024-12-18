@@ -15,7 +15,7 @@ class Authentication extends Middleware
     protected function redirectTo($request)
     {
         if (!$request->expectsJson()) {
-            return route('login'); // Pastikan rute login sudah terdefinisi
+            return route('login.form'); // Pastikan rute login sudah terdefinisi
         }
     }
 }

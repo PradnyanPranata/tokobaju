@@ -23,19 +23,19 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <!-- Menggunakan route() Laravel untuk tautan ke halaman utama -->
-                            <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
+                            <a class="nav-link" aria-current="page" href="{{ route('admin') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produk</a>
+                            <a class="nav-link" href="{{ route('admin.transaksi') }}">Transaksi</a>
                         </li>
                         <li class="nav-item">
                             <!-- Menggunakan route() Laravel untuk halaman kontak -->
                             <a class="nav-link" href="{{ route('kontak') }}">Kontak</a>
                         </li>
-                        <li class="nav-item">
-                            <!-- Menggunakan route() Laravel untuk halaman login -->
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
-                        </li>
+                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                            @csrf
+                            <button type="submit" class="nav-link btn btn-link">Logout</button>
+                        </form>
                     </ul>
                 </div>
             </div>
@@ -53,31 +53,44 @@
             </div>
         </div>
 
-<!-- Kotak Deskripsi Produk -->
-<div class="col-md-6 d-flex align-items-center">
+ <!-- Product Description Box -->
+ <div class="col-md-6 d-flex align-items-center">
     <div class="product-description-box p-4">
-    <form>
-        <h2 class="product-title">Work Shirt</h2>
-        <div class="mb-3">
-            <label for="Stok" class="form-label">Total Stok S</label>
-            <input type="text" class="form-control" id="username" placeholder="" value="20" required />
-        </div>
-        <div class="mb-3">
-            <label for="Stok" class="form-label">Total Stok M</label>
-            <input type="text" class="form-control" id="password" placeholder="" value="30" required />
-        </div>
-        <div class="mb-3">
-            <label for="Stok" class="form-label">Total Stok L</label>
-            <input type="text" class="form-control" id="username" placeholder="" value="40" required />
-        </div>
-        <div class="mb-3">
-            <label for="Stok" class="form-label">Total Stok XL</label>
-            <input type="text" class="form-control" id="password" placeholder="" value="50" required />
-        </div>
-    </form>
+        <form action="{{ route('updatebarang1') }}" method="POST">
+            @csrf
+            @method('PUT') <!-- Tambahkan ini untuk menggunakan metode PUT -->
+        
+            <div class="mb-3">
+                <label for="stok_s" class="form-label">Total Stok S</label>
+                <input type="number" name="stok_s" class="form-control" value="{{ $product->stock_s }}" required>
+            </div>
+        
+            <div class="mb-3">
+                <label for="stok_m" class="form-label">Total Stok M</label>
+                <input type="number" name="stok_m" class="form-control" value="{{ $product->stock_m }}" required>
+            </div>
+        
+            <div class="mb-3">
+                <label for="stok_l" class="form-label">Total Stok L</label>
+                <input type="number" name="stok_l" class="form-control" value="{{ $product->stock_l }}" required>
+            </div>
+        
+            <div class="mb-3">
+                <label for="stok_xl" class="form-label">Total Stok XL</label>
+                <input type="number" name="stok_xl" class="form-control" value="{{ $product->stock_xl }}" required>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Simpan Stok</button>
+        </form>            
+        @if (session('success'))
+            <div class="alert alert-success mt-3">
+                {{ session('success') }}
+            </div>
+        @endif
     </div>
 </div>
-
+</div>
+</section>
 </body>
 
     <!-- Footer -->

@@ -8,7 +8,6 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-
 class User extends Authenticatable
 {
     use HasFactory;
@@ -22,9 +21,15 @@ class User extends Authenticatable
         'is_admin'
     ];
 
-    // protected $hidden = [
-    //     'password'
-    // ];
+    protected $hidden = [
+        'password'
+    ];
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
 
     // public function orders()
     // {
@@ -62,9 +67,10 @@ class User extends Authenticatable
      * @param  string  $value
      * @return void
      */
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
+    
+    // public function setPasswordAttribute($value)
+    // {
+    //     $this->attributes['password'] = bcrypt($value);
+    // }
 
 }

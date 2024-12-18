@@ -22,9 +22,6 @@
                             <a class="nav-link" aria-current="page" href="{{ route('index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produk</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('kontak') }}">Kontak</a>
                         </li>
                         <li class="nav-item">
@@ -42,21 +39,37 @@
                 <div class="card">
                     <div class="card-body">     
                         <h2 class="text-center">Login</h2>
+
+                        <!-- Pesan error global -->
+                        @if ($errors->has('error'))
+                            <div class="alert alert-danger">
+                                {{ $errors->first('error') }}
+                            </div>
+                        @endif
+
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                                <input type="email" 
+                                       class="form-control @error('email') is-invalid @enderror" 
+                                       id="email" 
+                                       name="email" 
+                                       placeholder="Enter your email" 
+                                       value="{{ old('email') }}">
                                 @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                 @enderror
-
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                                <input type="password" 
+                                       class="form-control @error('password') is-invalid @enderror" 
+                                       id="password" 
+                                       name="password" 
+                                       placeholder="Enter your password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -65,10 +78,10 @@
                             </div>
                             <div class="text"><a href="#">Forgot password?</a></div>
                             <div class="button input-box">
-                                <input type="submit" value="Submit">
+                                <button type="submit" class="btn btn-primary w-100">Submit</button>
                             </div>
                         </form>
-                        <p class="text-center mt-3">Don't have an account? <a class="nav-link" href="{{ route('signup') }}">Sign up</a></p>
+                        <p class="text-center mt-3">Don't have an account? <a href="{{ route('signup') }}">Sign up</a></p>
                     </div>
                 </div>
             </div>

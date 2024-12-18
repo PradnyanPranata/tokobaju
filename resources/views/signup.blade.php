@@ -23,9 +23,6 @@
                             <a class="nav-link" aria-current="page" href="{{ route('index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produk</a>
-                        </li>
-                        <li class="nav-item">
                             <!-- Menggunakan route() Laravel untuk halaman kontak -->
                             <a class="nav-link" href="{{ route('kontak') }}">Kontak</a>
                         </li>
@@ -53,7 +50,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" required />
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required />
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>

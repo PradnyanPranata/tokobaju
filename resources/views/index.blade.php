@@ -27,15 +27,12 @@
                             <a class="nav-link" aria-current="page" href="{{ route('index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produk</a>
-                        </li>
-                        <li class="nav-item">
                             <!-- Menggunakan route() Laravel untuk halaman kontak -->
                             <a class="nav-link" href="{{ route('kontak') }}">Kontak</a>
                         </li>
                         <li class="nav-item">
                             <!-- Menggunakan route() Laravel untuk halaman login -->
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link" href="{{ route('login.form') }}">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -61,32 +58,29 @@
     <!-- Product Section -->
     <section id="products" class="container-fluid py-5 bg-custom">
         <h2 class="text-rekomendasi mb-4"><b>REKOMENDASI PRODUCT MAKE A WISH</b></h2>
+        <!-- Baris 1 -->
         <div class="row">
-            <!-- Product Card 1 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <!-- Menggunakan asset() Laravel untuk gambar produk -->
-                    <img src="{{ asset('image/cardigan.png') }}" class="card-img-top" alt="Product 1" />
+                    <img src="{{ asset('image/cardigan.png') }}" class="card-img-top" alt="Cardigan" />
                     <div class="card-body">
                         <h5 class="card-title"><b>Cardigan</b></h5>
                         <p class="card-text">Harga: Rp150.000</p>
                     </div>
                 </div>
             </div>
-            <!-- Product Card 2 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="{{ asset('image/outer.png') }}" class="card-img-top" alt="Product 2" />
+                    <img src="{{ asset('image/outer.png') }}" class="card-img-top" alt="Corduroy Jacket" />
                     <div class="card-body">
                         <h5 class="card-title"><b>Corduroy Jacket</b></h5>
                         <p class="card-text">Harga: Rp200.000</p>
                     </div>
                 </div>
             </div>
-            <!-- Product Card 3 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="{{ asset('image/blazer.png') }}" class="card-img-top" alt="Product style" />
+                    <img src="{{ asset('image/blazer.png') }}" class="card-img-top" alt="Blazer" />
                     <div class="card-body">
                         <h5 class="card-title"><b>Blazer</b></h5>
                         <p class="card-text">Harga: Rp500.000</p>
@@ -94,35 +88,30 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Product Section -->
-    <section id="products" class="container-fluid py-5 bg-custom">
+    
+        <!-- Baris 2 -->
         <div class="row">
-            <!-- Product Card 4 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="{{ asset('image/hoodie.png') }}" class="card-img-top img-fluid" alt="Product 1" />
+                    <img src="{{ asset('image/hoodie.png') }}" class="card-img-top" alt="Hoodie" />
                     <div class="card-body">
                         <h5 class="card-title"><b>Hoodie</b></h5>
                         <p class="card-text">Harga: Rp200.000</p>
                     </div>
                 </div>
             </div>
-            <!-- Product Card 5 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="{{ asset('image/workshirt.png') }}" class="card-img-top img-fluid" alt="Product 2" />
+                    <img src="{{ asset('image/workshirt.png') }}" class="card-img-top" alt="Work Shirt" />
                     <div class="card-body">
                         <h5 class="card-title"><b>Work Shirt</b></h5>
                         <p class="card-text">Harga: Rp350.000</p>
                     </div>
                 </div>
             </div>
-            <!-- Product Card 6 -->
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="{{ asset('image/flannel.png') }}" class="card-img-top img-fluid" alt="Product 3" />
+                    <img src="{{ asset('image/flannel.png') }}" class="card-img-top" alt="Flannel" />
                     <div class="card-body">
                         <h5 class="card-title"><b>Flannel</b></h5>
                         <p class="card-text">Harga: Rp150.000</p>
@@ -130,18 +119,40 @@
                 </div>
             </div>
         </div>
-         <!-- Product Card 7 -->
-         <div class="col-md-4">
-            <div class="card">
-                <img src="{{ asset('image/dress.jpg') }}" class="card-img-top img-fluid" alt="Product 3" />
-                <div class="card-body">
-                    <h5 class="card-title"><b>Dress</b></h5>
-                    <p class="card-text">Harga: Rp300.000</p>
+    
+        <!-- Baris 3 -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset('image/dress.jpg') }}" class="card-img-top" alt="Dress" />
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Dress</b></h5>
+                        <p class="card-text">Harga: Rp300.000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset('image/sweater.png') }}" class="card-img-top" alt="Sweater" />
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Sweater</b></h5>
+                        <p class="card-text">Harga: Rp200.000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ asset('image/vest.png') }}" class="card-img-top" alt="Vest" />
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Vest</b></h5>
+                        <p class="card-text">Harga: Rp250.000</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </section>
+    
+
 
     <!-- Modal -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
